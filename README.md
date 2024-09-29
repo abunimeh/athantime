@@ -41,3 +41,11 @@ Next Athan (fajr) will be called @ 2024-09-24 04:23:30
 - See `examples` directory for additional usage. 
 - `sched_athan.py` is an example running the library as a background process which execute a command 
 every time an Athan is called. This is useful if you want to play an audio file.
+
+#### Example Athan Schedule
+Assuming there is a shell script which plays audios, a user can play all 5 Athans using this command
+```
+python3 examples/sched_athan.py -e 100 -l 30 -L -100
+
+where -e is elevation, -l is longitude, and -L is longitude
+```
