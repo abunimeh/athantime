@@ -2,7 +2,7 @@
 name = "athantimes"
 version = "0.1.0"
 authors = [
-    "abunimeh <asd1815@gmail.com",
+    "abunimeh <asd1815@gmail.com>",
 ]
 description = "Calculate and Generate Athan and Salah Times"
 readme = "README.md"
