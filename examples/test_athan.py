@@ -1,6 +1,6 @@
 """Simple example using elevation, latitude, longitude."""
 
-from athantimes import Athan, print_prayer_times
+from athantime import Athan, print_prayer_times
 
 # create Athan object based on user params
 prayer = Athan(

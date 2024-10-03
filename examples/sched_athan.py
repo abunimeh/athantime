@@ -6,7 +6,7 @@ import subprocess
 import time
 
 # from datetime import datetime, timedelta
-from athantimes import Athan
+from athantime import Athan
 
 
 def call_athan(scheduler, next_salah, args):
