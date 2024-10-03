@@ -6,8 +6,8 @@ resolution-markers = [
 ]
 
 [[package]]
-name = "athantimes"
-version = "0.1.0"
+name = "athantime"
+version = "0.1.2"
 source = { editable = "." }
 
 [package.dev-dependencies]
