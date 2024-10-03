@@ -11,7 +11,14 @@ requires-python = ">=3.10"
 dependencies = []
 
 [project.scripts]
-getathan = "athantime:get_prayer_times"
+getathan = "athantime:start"
+
+[project.urls]
+Homepage = "https://github.com/abunimeh/athantime"
+Documentation = "https://github.com/abunimeh/athantime"
+Repository = "https://github.com/abunimeh/athantime.git"
+"Bug Tracker" = "https://github.com/abunimeh/athantime/issues"
+Changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"
 
 [tool.ruff]
 exclude = [ "tests/",]
