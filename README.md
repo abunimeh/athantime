@@ -1,7 +1,21 @@
 # Zero external dependency Athan calculator
 A simple Athan calculator with no external dependencies. Calculates prayer times using latitude, longitude, and elevation.
 
+### Installation
+```
+pip install athantime
+```
+
 ### Usage
+Run it as a CLI tool, `see, getathan --help `, example:
+
+```
+getathan -e 100 -l 30 -L -100
+```
+
+
+
+Use it in a script:
 ```python
 from athantimes import Athan, print_prayer_times
 
@@ -49,3 +63,4 @@ python3 examples/sched_athan.py -e 100 -l 30 -L -100
 
 where -e is elevation, -l is longitude, and -L is longitude
 ```
+This will execute a shell script @ `/home/pi/sounds/many.sh` whenever it is time for athan.

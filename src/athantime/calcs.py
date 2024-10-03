@@ -1,5 +1,6 @@
 """Athan Library."""
 
+import argparse
 import calendar
 import csv
 import math
@@ -407,6 +408,32 @@ def generate_year_prayer_times(prayer: Athan, year: int) -> str:
         print("Athan times written to " + tf.name)
 
     return tf.name
+
+
+def start():
+    """Entry Point for CLI."""
+    parser = argparse.ArgumentParser(description="Schedule Athan Times.")
+    parser.add_argument("-e", "--elev", type=float, default=100, help="Elevation in meters")
+    parser.add_argument("-l", "--lat", type=float, default=30, help="Latitude in degrees")
+    parser.add_argument("-L", "--lon", type=float, default=-120, help="Longitude in degrees")
+    parser.add_argument("-a", "--asr", type=int, default=1, help="Asr (1: Jumhoor, 2: Hanafi)")
+    parser.add_argument("-f", "--fajr_angle", type=float, default=15, help="Fajr angle in degrees")
+    parser.add_argument("-i", "--isha_angle", type=float, default=15, help="Isha angle in degrees")
+
+    args = parser.parse_args()
+
+    # init Athan() class
+    prayer = Athan(
+        elev=args.elev,
+        lat=args.lat,
+        lon=args.lon,
+        asr_method=args.asr,  # jumhoor = 1. hanafi = 2
+        fajr_angle=args.fajr_angle,
+        isha_angle=args.isha_angle,
+    )
+
+    # example prayer calculation
+    get_prayer_times(prayer)
 
 
 if __name__ == "__main__":
