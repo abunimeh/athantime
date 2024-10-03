@@ -372,6 +372,7 @@ def get_prayer_times(prayer: Athan) -> Dict[str, float]:
 
     return m_times
 
+
 def print_prayer_times(m_times: Dict[str, float]):
     """Determine the next salah.
 
@@ -384,6 +385,7 @@ def print_prayer_times(m_times: Dict[str, float]):
     print("Asr: " + str(timedelta(hours=m_times["asr"])))
     print("Maghrib: " + str(timedelta(hours=m_times["maghrib"])))
     print("Isha: " + str(timedelta(hours=m_times["isha"])))
+
 
 def generate_year_prayer_times(prayer: Athan, year: int) -> str:
     """Generate a csv prayer table for entire gregorian year.
