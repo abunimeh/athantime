@@ -4,15 +4,17 @@ import argparse
 import sched
 import subprocess
 import time
-from datetime import datetime, timedelta
 
+# from datetime import datetime, timedelta
 from athantimes import Athan
+
 
 def call_athan(scheduler, next_salah, args):
     """Execute athan player.
 
     Args:
         scheduler (scheduler): sched obj
+        next_salah (str): salah name e.g. fajr, dhuhr, asr, maghrib, isha
         args (Namespace): argparse args
     """
     # print("Simulate calling Athan")
@@ -25,7 +27,7 @@ def call_athan(scheduler, next_salah, args):
             shell_script_path,
             capture_output=True,  # Capture stdout and stderr
             text=True,  # Decode output as text
-            check=True  # Raise an exception if the script fails
+            check=True,  # Raise an exception if the script fails
         )
     except subprocess.CalledProcessError as e:
         print(f"Error running script: {e}")
@@ -64,7 +66,9 @@ def sched_athan(sch, args):
     print(f"Next Athan ({next_salah}) will be called @ {athan_time}")
 
     # Schedule run at desired time
-    sch.enterabs(time.mktime(athan_time.timetuple()), 1, call_athan, argument=(sch, next_salah, args))  # type: ignore
+    sch.enterabs(
+        time.mktime(athan_time.timetuple()), 1, call_athan, argument=(sch, next_salah, args)
+    )  # type: ignore
 
     # Run the scheduler
     sch.run()

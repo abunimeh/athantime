@@ -1,11 +1,12 @@
 """Simple example using elevation, latitude, longitude."""
+
 from athantimes import Athan, print_prayer_times
 
 # create Athan object based on user params
 prayer = Athan(
     elev=100,  # Elevation
     lat=30,  # Latitude
-    lon=-100  # Longitude
+    lon=-100,  # Longitude
     # asr_method=1,  # jumhoor = 1. hanafi = 2
     # fajr_angle=15,
     # isha_angle=15,
